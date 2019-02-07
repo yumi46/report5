@@ -5,12 +5,19 @@ plugins {
 group 'report5'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 10
 
 repositories {
     mavenCentral()
 }
+test {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+}
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+jar {
+    manifest {
+        attributes  "Main-Class": "jp.ac.uryukyu.ie.e185727.Main"
+        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+    }
 }
