@@ -41,6 +41,13 @@ public class LivingThing {
         return attack;
     }
 
+    /**
+     * attack()の処理
+     * @if 死んでいない場合、ランダムでダメージを与える。
+     * @printf 与えたダメージの結果
+     * @elseif 死んでいる場合、
+     * @printf 死んでいる結果
+     */
 
     public void attack(LivingThing opponent) {
         if (dead == false) {
@@ -51,7 +58,11 @@ public class LivingThing {
             System.out.printf("%sは死んでいるよ。\n", name);
         }
     }
-
+    /**
+     * wounded()の処理
+     * @if hitpointがマイナスなら、dead
+     * @printf 倒れた結果
+     */
     public void wounded(int damage) {
         hitPoint -= damage;
         if (hitPoint < 0) {
